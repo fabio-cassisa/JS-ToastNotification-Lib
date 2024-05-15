@@ -23,7 +23,10 @@ export default class Toast {
   }
 
   remove() {
+    const container = this.#toastElem.parentElement
     this.#toastElem.remove()
+    if (container.hasChildNodes()) return
+    container.remove()
   }
 
 }
